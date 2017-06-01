@@ -2,21 +2,19 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-   <!-- <meta content="width=device-width, initial-scale=1.0" name="viewport"> -->
-  <title>Tom's Restaurant</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Katz's Delicatessen</title>
   <link rel="stylesheet" type="text/css" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css">
-  <!-- boostrap css -->
-  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
   <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 
 </head>
-<body>
+<body onload="initMap();">
 <div class="top-bar">
         <div class="row" >
             <div class="top-bar-left">
                 <ul class="dropdown menu" data-dropdown-menu="">
-                    <li id="logo" class="menu-text">Tom's Restaurant</li>
+                    <li id="logo" class="menu-text">Katz's Delicatessen - New York City</li>
                     </li>
                 </ul>
             </div>
@@ -48,7 +46,7 @@
     </div>
     <hr>
 <div class="row column">
-<h4 style="margin: 0;" class="text-center">RESERVATIONS</h4><a id="step2"></a>
+<h4 style="margin: 0;" class="text-center"><strong></strong>RESERVATIONS<strong></strong></h4><a id="step2"></a>
 </div>
 <hr>
 <!-- END Intro -->
@@ -57,7 +55,7 @@
 <div class="row">
         <div class="medium-6 columns">
               <div class="tabs" style="padding:1em">         
-                              <h5>Make a Reservation</h5>
+                              <h5><strong>Make a Reservation</strong></h5>
                                 <p>Let us know your name and date to make a reservation.</p>
 <form class="form-inline reservation-form">
       <div class="form-group">
@@ -87,14 +85,14 @@
 
         <div class="medium-6 columns">
         <div class="tabs" style="padding:1em">         
-                        <h5>Reservations Policy</h5>
+                        <h5><strong>Reservations Policy</strong></h5>
                         <p>Due to demand, Tom's only accepts reservations for Friday evenings through Sunday lunch. For all other times, please join the line at our door.</p>
                         <p>Our sitting times are set and cannot be altered:</p>
                         <ul>
                         <li><strong>Lunch sittings</strong> run 12:30 - 14:00</li>
                         <li><strong>Dinner sittings</strong> run 19:30 - 21:00</li>
                         </ul>
-                        <h5>Your Reservations</h5>
+                        <h5><strong>Your Reservations</strong></h5>
     <ul class="reservations"></ul>
   <script id="reservation-template" type="text/x-handlebars-template">
     <li data-id="{{reservationId}}">
@@ -131,11 +129,13 @@
             <img src="jerry.jpg">
         </div>
         <div class="medium-6 large-5 columns">
-            <p class="lead" style="font-style:italic">"Without a doubt, one of the most kick-ass meals I've eaten in the capital. <br> <br> When I'm visiting the city, I make sure I stop by Tom's. Big lettuce, big carrots, tomatoes like volleyballs... what's not to love."</p>
-            <p class="lead"> - Jerry Seinfeld, on The BIG Salad</p>
+            <p>Each week thousands of visitors from around the world flock to Katz's to dine in this legendary deli, and to feast on the most delectable sandwiches, platters and meats. But it's really New Yorkers have made Katz's Delicatessen what it is, making Katz's an inherent part of the city's culture and history. They enthusiastically spread the word, brought their friends in, wrote books, shot films, and kept coming back for a pastrami on rye.</p>
+            <p>"Without a doubt, one of the most kick-ass meals I've eaten in the capital. When I'm visiting the city, I make sure I stop by Katz."</p>
+            <p><strong> - Jerry Seinfeld, on The BIG Salad</strong></p>
             <div class="small secondary expanded button-group">
-                <a class="button">Facebook</a> <a class="button">Twitter</a>
-                <a class="button">Yelp!</a>
+                <a href="https://www.facebook.com/katzsdeli/" target="_blank" class="button">Facebook</a> 
+                <a href="https://twitter.com/KatzsDeli" target="_blank" class="button">Twitter</a>
+                <a href="https://www.yelp.com/biz/katzs-delicatessen-new-york" target="_blank" class="button">Yelp!</a>
             </div>
         </div>
     </div>
@@ -146,7 +146,7 @@
 <br>
  <div class="top-bar">
                 <ul>
-                    <li id="logo" class="menu-text">Tom's Restaurant</li>
+                    <li id="logo" class="menu-text">Katz's Delicatessen - New York City</li>
                     </li>
                 </ul>
             </div>
@@ -161,9 +161,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!-- handlebars -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-  <!-- custom js -->
-  <script src="main.js"></script>
   <!-- google maps -->
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDbt1M_Y1NT5NIZ27O1y0L-PXT5-bEIjs" async defer></script>
+
+  <!-- custom js -->
+  <script src="main.js"></script>
+
 </body>
 </html>

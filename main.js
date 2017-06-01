@@ -1,11 +1,23 @@
-$(function() {
-$('#thumbnails').children('div').children('img');
-$('#thumbnails').find('.thumbnail');
-$('#thumbnails').children();
-$('.thumbnail').parent().parent('#thumbnails'); 
-$('.thumbnail').parent('div').next().children('.thumbnail');
-$('#thumbnails div:last-child').prev().children('.thumbnail');
-});
+// initialize the configuration of map
+function initMap() {
+    // create a new instance of a map
+    // configure map with options object
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: { lat: 40.8054491, lng: -73.9654415 },
+      zoom: 12,
+      scrollwheel: false,
+      styles: [{"featureType":"water","stylers":[{"color":"#19a0d8"}]},{"featureType":"administrative","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"},{"weight":2}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#e85113"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#efe9e4"},{"lightness":-40}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#efe9e4"},{"lightness":-20}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"lightness":100}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"lightness":-100}]},{"featureType":"road.highway","elementType":"labels.icon"},{"featureType":"landscape","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"landscape","stylers":[{"lightness":20},{"color":"#efe9e4"}]},{"featureType":"landscape.man_made","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"lightness":100}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"lightness":-100}]},{"featureType":"poi","elementType":"labels.text.fill","stylers":[{"hue":"#11ff00"}]},{"featureType":"poi","elementType":"labels.text.stroke","stylers":[{"lightness":100}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"hue":"#4cff00"},{"saturation":58}]},{"featureType":"poi","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#f0e4d3"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#efe9e4"},{"lightness":-25}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#efe9e4"},{"lightness":-10}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"simplified"}]}]
+    });
+
+    // use Marker constructor to add a marker to map
+    var marker = new google.maps.Marker({
+      position: { lat: 40.8054491, lng: -73.9654415 },
+      map: map,
+      title: 'Our Location'
+    });
+
+};
+
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyDqlZe8pp-_xe38UowEm5vsc4yn2Bm4oG4",
@@ -77,35 +89,3 @@ database.ref('reservations').on('value', function (results) {
 }
 
 getReservations();
-
-// initialize the configuration of map
-function initMap() {
-  // use JS's built-in Navigator to get user's lat/lng coordinates
-  navigator.geolocation.getCurrentPosition(function(position) {
-    // create an object to store lat/lng data
-    var tomLocation = {
-  lat: 40.8054491, 
-  lng: -73.9654415
-
-
-    };
-
-    // create a new instance of a map
-    // configure map with options object
-    var map = new google.maps.Map(document.getElementById('map'), {
-      center: tomLocation,
-      zoom: 10,
-      scrollwheel: false
-    });
-
-    // use Marker constructor to add a marker to map
-    var marker = new google.maps.Marker({
-      position: tomLocation,
-      map: map,
-      title: 'Our Location'
-    });
-
-  });
-}
-
-initMap();
